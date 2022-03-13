@@ -41,15 +41,6 @@ class test(SequentialTaskSet):
         self.client.post(config["kosbert"], data=json.dumps(payload), headers=headers)
     
     @task
-    def sendKcelectra(self):
-        payload = {
-            "token": config["token"],
-            "chat_message": "오늘 힘들어"
-        }
-        
-        self.client.post(config["kcelectra"], data=json.dumps(payload), headers=headers)
-    
-    @task
     def done(self):
         self.interrupt()
 
